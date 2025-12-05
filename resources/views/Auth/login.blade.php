@@ -1,0 +1,29 @@
+<x-app-layout>
+    <x-slot:heading>
+        Log In
+    </x-slot:heading>
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" class="mx-auto h-10 w-auto" />
+    <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form action="{{ route('login.store') }}" method="POST" class="space-y-6">
+        <x-forms.input type="text" label="Email" name="email" />
+        <x-forms.input type="password" label="Password" name="password" />
+
+      <div>
+        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm/6 text-gray-500">
+      Not a member?
+      <a href="{{ route('register.create') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Register here</a>
+    </p>
+  </div>
+</div>
+
+</x-app-layout>

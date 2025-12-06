@@ -11,6 +11,7 @@
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
     <form action="{{ route('login.store') }}" method="POST" class="space-y-6">
+        @csrf
         <x-forms.input type="text" label="Email" name="email" />
         <x-forms.input type="password" label="Password" name="password" />
 

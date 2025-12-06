@@ -17,7 +17,6 @@ class RegisterUserController extends Controller
         RegisterUserRequest $request
     ) {
         $action->execute($request);
-
         return redirect(route('login.create'));
     }
 }

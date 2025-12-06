@@ -2,11 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginUserController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterUserController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('index', PostController::class);
 
 Route::controller(RegisterUserController::class)
         ->prefix('register')

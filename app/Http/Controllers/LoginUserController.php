@@ -20,9 +20,8 @@ class LoginUserController extends Controller
 
         if($action->execute($validated))
         {
-            return redirect()->intended('index');
+            return redirect()->intended('/');
         }
-
         return back()->withErrors([
             'email' => 'Wrong email or password',
         ])->onlyInput('email');

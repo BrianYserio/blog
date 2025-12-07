@@ -5,7 +5,8 @@ use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterUserController;
 
-Route::resource('index', PostController::class);
+Route::get('/', [PostController::class, 'index'])->middleware('auth');
+Route::get('/post', [PostController::class, 'create']);
 
 Route::controller(RegisterUserController::class)
         ->prefix('register')

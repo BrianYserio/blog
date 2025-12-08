@@ -1,12 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginUserController;
 use App\Http\Controllers\RegisterUserController;
 
 Route::get('/', [PostController::class, 'index'])->middleware('auth');
-Route::get('/post', [PostController::class, 'create']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
 Route::controller(RegisterUserController::class)
         ->prefix('register')
@@ -23,3 +24,6 @@ Route::controller(LoginUserController::class)
     Route::get('/', 'create')->name('create');
     Route::post('/', 'store')->name('store');
 });
+
+
+Route::get('post/create', [UserController::class, 'create'])->name('posts.create');

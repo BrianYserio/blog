@@ -10,8 +10,7 @@
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form action="{{ route('register.store') }}" method="POST" class="space-y-6">
-        @csrf
+    <x-forms.form action="{{ route('register.store') }}" class="space-y-6">
         <x-forms.input type="text" label="Fullname" name="name" />
         <x-forms.input type="text" label="Email" name="email" />
         <x-forms.input type="password" label="Password" name="password" />
@@ -19,7 +18,7 @@
       <div>
         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
       </div>
-    </form>
+    </x-forms.form>
 
     <p class="mt-10 text-center text-sm/6 text-gray-500">
       Not a member?
